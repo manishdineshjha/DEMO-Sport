@@ -17,17 +17,38 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 64px 12px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+.text-primary {
+  color: rgba(255, 255, 255, 1);
+}
+.bg-dark {
+  background: rgba(41, 43, 50, 1) !important ;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.bg-light {
+  background: #f7f7f8;
+  /* color: #0000 !important; */
+}
+.bg-light-secondary {
+  background: #ffff !important;
+}
+.bg-dark-secondary {
+  background: rgba(59, 62, 71, 1);
+}
+.resp-wrap {
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  /* Your styles for screens with a maximum width of 768px */
+  .resp-wrap {
+    flex-wrap: wrap;
   }
 }

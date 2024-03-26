@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    
     extend: {
+      fontFamily: {
+        // 👇 Add CSS variables
+        inter: ["var(--font-inter)"],
+        poppins: ["var(--font-poppins)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
