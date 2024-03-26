@@ -92,7 +92,7 @@ const Ticket: React.FC = () => {
   ];
   const [startIndex, setStartIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3); // Default to 3 for other viewport widths
-const {darkMode}=useContext(DarkModeContext)
+  const { darkMode } = useContext(DarkModeContext);
   useEffect(() => {
     const handleResize = () => {
       const viewportWidth = window?.innerWidth;
@@ -131,9 +131,12 @@ const {darkMode}=useContext(DarkModeContext)
   };
   return (
     <div
+    className="resp-padding"
       style={{
-        padding: window?.innerWidth >= 768 ? "70px" : "20px",
-        background: darkMode?"linear-gradient(to bottom, #18282A, #221A2C)":"linear-gradient(to bottom,#F9F8FF,#F3F9FF)",
+        
+        background: darkMode
+          ? "linear-gradient(to bottom, #18282A, #221A2C)"
+          : "linear-gradient(to bottom,#F9F8FF,#F3F9FF)",
       }}
     >
       <div
@@ -168,7 +171,9 @@ const {darkMode}=useContext(DarkModeContext)
           {ticketData &&
             visibleTickets?.map((itm, idx) => (
               <div
-                className={` ${darkMode?"bg-dark-secondary":"bg-light-secondary"} shadow-lg rounded-lg overflow-hidden`}
+                className={` ${
+                  darkMode ? "bg-dark-secondary" : "bg-light-secondary"
+                } shadow-lg rounded-lg overflow-hidden`}
                 style={{ width: "257px", position: "relative" }}
                 key={idx}
               >
@@ -188,8 +193,9 @@ const {darkMode}=useContext(DarkModeContext)
                         width: "20px",
                         height: "20px",
                         marginLeft: "-8px",
-                        background: darkMode?"linear-gradient(to bottom, #18282A, #221A2C)":"linear-gradient(to bottom,#D9D9D9,#F3F9FF)",
-                        
+                        background: darkMode
+                          ? "linear-gradient(to bottom, #18282A, #221A2C)"
+                          : "linear-gradient(to bottom,#D9D9D9,#F3F9FF)",
                       }}
                     ></div>
                     <div
@@ -205,8 +211,9 @@ const {darkMode}=useContext(DarkModeContext)
                         width: "20px",
                         height: "20px",
                         marginRight: "-8px",
-                        background: darkMode?"linear-gradient(to bottom, #18282A, #221A2C)":"linear-gradient(to bottom,#D9D9D9,#F3F9FF)",
-
+                        background: darkMode
+                          ? "linear-gradient(to bottom, #18282A, #221A2C)"
+                          : "linear-gradient(to bottom,#D9D9D9,#F3F9FF)",
                       }}
                     ></div>
                   </div>
@@ -237,7 +244,7 @@ const {darkMode}=useContext(DarkModeContext)
                         marginTop: "18px",
                         fontWeight: "400",
                         fontSize: "14px",
-                        color: darkMode?"#DFDFDF":"#525965",
+                        color: darkMode ? "#DFDFDF" : "#525965",
                       }}
                     >
                       {itm?.address1}&nbsp;{itm?.address2}
@@ -252,7 +259,7 @@ const {darkMode}=useContext(DarkModeContext)
                         background: "#000000",
                         padding: "11px",
                         fontSize: "13px",
-                        color:"#ffff"
+                        color: "#ffff",
                       }}
                     >
                       {itm?.btnText}

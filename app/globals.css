@@ -45,10 +45,15 @@ body {
 .resp-wrap {
   flex-wrap: nowrap;
 }
-
+.resp-padding{
+  padding: 70px;
+}
 @media screen and (max-width: 768px) {
   /* Your styles for screens with a maximum width of 768px */
   .resp-wrap {
     flex-wrap: wrap;
+  }
+  .resp-padding{
+    padding: 20px;
   }
 }
